@@ -33,8 +33,8 @@
     <div class="error-pagewrap">
         <div class="error-page-int">
             <div class="text-center m-b-md custom-login">
-                <h3>HALO><</h3>
-                <h4>Sistem Informasi E-Arsip</h4>
+                <h3>Sistem Informasi E-Arsip</h3>
+                <h4></h4>
 
                 <br>
 
