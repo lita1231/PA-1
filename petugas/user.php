@@ -9,7 +9,7 @@
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <div class="breadcome-heading">
-                                <h4 style="margin-bottom: 0px">Data User</h4>
+                                <h4 style="margin-bottom: 0px"></h4>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -56,7 +56,7 @@
                                 <?php 
                                 if($p['user_foto'] == ""){
                                     ?>
-                                    <img class="img-user" src="../gambar/sistem/">
+                                    <img class="img-user" src="../gambar/sistem/user.png">
                                     <?php
                                 }else{
                                     ?>

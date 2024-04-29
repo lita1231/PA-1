@@ -33,12 +33,12 @@
     <div class="error-pagewrap">
         <div class="error-page-int">
             <div class="text-center m-b-md custom-login">
-                <h3>HALO><</h3>
-                <h4>Sistem Informasi E-ARSIP</h4>
+                <h3>Sistem Informasi E-ARSIP</h3>
+                <h4></h4>
 
                 <br>
 
-                <p>Silahkan login untuk mengakses arsip.</p>
+                <p>Silahkan Login.</p>
 
             </div>
             <div class="content-error">
@@ -86,7 +86,7 @@
                 <br>
             </div>
             <div class="text-center login-footer">
-                <p class="text-muted">Copyright © <?php echo date('Y') ?>. All rights reserved. Sistem Informasi E-Arsip. By Kelompok 13    </p>
+                <p class="text-muted">Copyright © <?php echo date('Y') ?>. All rights reserved. Sistem Informasi E-Arsip. By 13 Group    </p>
             </div>
         </div>   
     </div>

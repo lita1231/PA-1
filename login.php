@@ -96,7 +96,7 @@
                 <a href="index.php">Kembali</a>
             </div>
             <div class="text-center login-footer">
-                <p class="text-muted">Copyright © <?php echo date('Y') ?>. All rights reserved. Sistem Informasi E-Arsip By Kelompok 13</p>
+                <p class="text-muted">Copyright © <?php echo date('Y') ?>. All rights reserved. Sistem Informasi E-Arsip By 13 Group</p>
             </div>
         </div>   
     </div>
