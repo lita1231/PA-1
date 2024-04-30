@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Admin - Sistem Informasi Arsip Digital</title>
+    <title>Admin - Sistem Informasi E-Arsip Digital</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
@@ -123,7 +123,7 @@
                                     <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12">
                                         <div class="header-top-menu tabl-d-n">
                                             <ul class="nav navbar-nav mai-top-nav">
-                                                <li class="nav-item"><a href="#" class="nav-link">Sistem Informasi Arsip Digital</a></li>
+                                                <li class="nav-item"><a href="#" class="nav-link">Sistem Informasi E-Arsip Digital</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -135,7 +135,7 @@
                                                     <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="educate-icon educate-bell" aria-hidden="true"></i><span class="indicator-nt"></span></a>
                                                     <div role="menu" class="notification-author dropdown-menu animated zoomIn">
                                                         <div class="notification-single-top">
-                                                            <h1>Riwayat unduh terakhir</h1>
+                                                            <h1>Riwayat Unduhan Terakhir</h1>
                                                         </div>
                                                         <ul class="notification-menu">
                                                             <?php 
