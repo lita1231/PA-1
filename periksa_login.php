@@ -8,7 +8,7 @@ $password = md5($_POST['password']);
 $akses = $_POST['akses'];
 
 if($akses == "admin"){
-
+	//Frengki
 	$login = mysqli_query($koneksi, "SELECT * FROM admin WHERE admin_username='$username' AND admin_password='$password'");
 	$cek = mysqli_num_rows($login);
 

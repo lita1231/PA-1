@@ -28,21 +28,20 @@
     <div class="row">
         <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
             <div class="panel">
-
                 <div class="panel-heading">
                     <h3 class="panel-title">Ganti Password</h3>
                 </div>
-
                 <div class="panel-body">
-
                     <?php 
                     if(isset($_GET['alert'])){
                         if($_GET['alert'] == "sukses"){
                             echo "<div class='alert alert-success'>Password anda berhasil diganti!</div>";
                         }
+                        elseif ($_GET['alert'] == "konfirmasi") {
+                            echo "<div class='alert alert-info'>Masukkan password yang mudah untuk di ingat</div>";
+                        }
                     }
                     ?>
-
                     <form action="gantipassword_act.php" method="post">
                         <div class="form-group">
                             <label>Masukkan Password Baru</label>
@@ -52,15 +51,14 @@
                             <input type="submit" class="btn btn-primary" value="Simpan">
                         </div>
                     </form>
-
                 </div>
-
             </div>
         </div>
-
     </div>
 </div>
 
+<br>
+<br>
 <br>
 <br>
 <br>

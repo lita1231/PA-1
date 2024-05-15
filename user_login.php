@@ -37,15 +37,16 @@
                 <h4></h4>
 
                 <br>
-
-                <p>Silahkan Login.</p>
+                <br>
+                
+                <p>Silahkan login untuk mengakses arsip.</p>
 
             </div>
             <div class="content-error">
                 <?php 
                 if(isset($_GET['alert'])){
                     if($_GET['alert'] == "gagal"){
-                        echo "<div class='alert alert-danger'>LOGIN GAGAL! USERNAME DAN PASSWORD SALAH!</div>";
+                        echo "<div class='alert alert-danger'>LOGIN GAGAL! NIM DAN PASSWORD SALAH!</div>";
                     }else if($_GET['alert'] == "logout"){
                         echo "<div class='alert alert-success'>ANDA TELAH BERHASIL LOGOUT</div>";
                     }else if($_GET['alert'] == "belum_login"){

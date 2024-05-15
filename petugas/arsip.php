@@ -50,7 +50,7 @@
                         <?php
                     }else{
                         ?>
-                        <div class="alert alert-success">Arsip berhasil tersimpan.</div>
+                        <div class="alert alert-success">Arsip berhasil di upload.</div>
                         <?php
                     }
                 }

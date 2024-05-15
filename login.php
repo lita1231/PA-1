@@ -33,13 +33,15 @@
     <div class="error-pagewrap">
         <div class="error-page-int">
             <div class="text-center m-b-md custom-login">
-                <h3>Sistem Informasi E-Arsip</h3>
-                <h4></h4>
-
-                <br>
-
-                <p>Silahkan login untuk mengakses arsip.</p>
-
+            <div class="text-center m-b-md custom-login">
+            <h3>Sistem Informasi E-ARSIP</h3>
+            
+    <h4></h4>
+    <br>
+    <p>Silahkan login untuk mengakses arsip.</p>
+    <br>
+</div>
+            
             </div>
             <div class="content-error">
                 <?php 
@@ -69,7 +71,7 @@
 
                         <form action="periksa_login.php" method="POST" id="loginForm">
                             <div class="form-group">
-                                <label class="control-label" for="username">Username</label>
+                                <label class="control-label" for="username">NIP/NIM</label>
                                 <input type="text" placeholder="username" title="Please enter you username" required="required" autocomplete="off" name="username" id="username" class="form-control">
                             </div>
                             <div class="form-group">
@@ -95,6 +97,8 @@
 
                 <a href="index.php">Kembali</a>
             </div>
+            <br>
+            <br>
             <div class="text-center login-footer">
                 <p class="text-muted">Copyright © <?php echo date('Y') ?>. All rights reserved. Sistem Informasi E-Arsip By 13 Group</p>
             </div>
