@@ -43,14 +43,15 @@
                     }
                     ?>
                     <form action="gantipassword_act.php" method="post">
-                        <div class="form-group">
-                            <label>Masukkan Password Baru</label>
-                            <input type="password" class="form-control" placeholder="Masukkan Password Baru .." name="password" required="required" min="5">
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" class="btn btn-primary" value="Simpan">
-                        </div>
-                    </form>
+                    <div class="form-group">
+                        <label><em>Masukkan Password yang Mudah Untuk di Ingat</em></label>
+                        <input type="password" class="form-control" placeholder="Masukkan Password Baru .." name="password" required="required" min="5">
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-primary" value="Simpan">
+                    </div>
+                </form>
+
                 </div>
             </div>
         </div>

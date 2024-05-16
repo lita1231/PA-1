@@ -38,7 +38,7 @@
             
     <h4></h4>
     <br>
-    <p>Silahkan login untuk mengakses arsip.</p>
+    <p>Silahkan Login</p>
     <br>
 </div>
             
@@ -91,7 +91,7 @@
                         </form>
 
                         <br>
-
+                
                     </div>
                 </div>
 

@@ -39,7 +39,7 @@
                 <br>
                 <br>
                 
-                <p>Silahkan login untuk mengakses arsip.</p>
+                <p>Silahkan Login</p>
 
             </div>
             <div class="content-error">
