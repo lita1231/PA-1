@@ -34,12 +34,13 @@
         <div class="error-page-int">
             <div class="text-center m-b-md custom-login">
             <div class="text-center m-b-md custom-login">
-            <h3>Sistem Informasi E-ARSIP</h3>
-            
-    <h4></h4>
-    <br>
-    <p>Silahkan Login</p>
-    <br>
+          <!-- Ganti teks dengan gambar logo -->
+          <a href="index.php">
+                <img src="assets/img/product/itdel.jpg" alt="Logo Sistem Informasi E-Arsip" class="img-responsive" style="max-width: 100px; margin: 0 auto;">
+                </a>
+
+                <h4></h4>
+                <p><strong>Silahkan Login</strong></p>
 </div>
             
             </div>

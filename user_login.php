@@ -33,13 +33,14 @@
     <div class="error-pagewrap">
         <div class="error-page-int">
             <div class="text-center m-b-md custom-login">
-                <h3>Sistem Informasi E-ARSIP</h3>
-                <h4></h4>
+                <!-- Ganti teks dengan gambar logo -->
+                <a href="index.php">
+                <img src="assets/img/product/itdel.jpg" alt="Logo Sistem Informasi E-Arsip" class="img-responsive" style="max-width: 100px; margin: 0 auto;">
+                </a>
 
-                <br>
-                <br>
-                
-                <p>Silahkan Login</p>
+                <h4></h4>
+                <p><strong>Silahkan Login</strong></p>
+    
 
             </div>
             <div class="content-error">
@@ -82,8 +83,9 @@
 
                     </div>
                 </div>
-                <br>
+            
                 <a href="index.php">Kembali</a>
+                <br>
                 <br>
             </div>
             <div class="text-center login-footer">
