@@ -101,7 +101,11 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="logo-pro">
-                        <a href="index.html"><img class="main-logo" src="../assets/img/logo/logo.png" alt="" /></a>
+                   
+                    <a href=" https://id.wikipedia.org/wiki/Arsip">
+    <img class="main-logo" src="../assets/img/logo/logo.png" alt="" />
+</a>
+
                     </div>
                 </div>
             </div>
@@ -123,7 +127,7 @@
                                     <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12">
                                         <div class="header-top-menu tabl-d-n">
                                             <ul class="nav navbar-nav mai-top-nav">
-                                                <li class="nav-item"><a href="#" class="nav-link">Sistem Informasi E-Arsip Digital</a></li>
+                                                <li class="nav-item"><a href="#" class="nav-link"></a></li>
                                             </ul>
                                         </div>
                                     </div>
