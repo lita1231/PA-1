@@ -58,7 +58,7 @@
 
                         <h4><a class="cards-hd-dn" href="#"><?php echo $s['user_nama']; ?></a></h4>
                         <h5>user</h5>
-                        <p class="ctn-cards">Pengelolaan arsip jadi lebih mudah dengan sistem informasi arsip digital.</p>
+                        <p class="ctn-cards">Saya Bangga Jadi Mahasiswa IT Del.</p>
                     </div>
                 </div>
 

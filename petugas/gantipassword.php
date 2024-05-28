@@ -39,26 +39,27 @@
                     if(isset($_GET['alert'])){
                         if($_GET['alert'] == "sukses"){
                             echo "<div class='alert alert-success'>Password anda berhasil diganti!</div>";
+                        } elseif($_GET['alert'] == "konfirmasi"){
+                            echo "<div class='alert alert-warning'>Silahkan konfirmasi untuk mengganti password!</div>";
                         }
                     }
                     ?>
 
-                <form action="gantipassword_act.php" method="post">
-                    <div class="form-group">
-                        <label><em>Masukkan Password yang Mudah Untuk di Ingat</em></label>
-                        <input type="password" class="form-control" placeholder="Masukkan Password Baru .." name="password" required="required" min="5">
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" class="btn btn-primary" value="Simpan">
-                    </div>
-                </form>
-
+                    <form id="gantipasswordForm" action="gantipassword_act.php" method="post" onsubmit="return confirmGantiPassword()">
+                        <div class="form-group">
+                            <label><em>Masukkan Password yang Mudah Untuk di Ingat</em></label>
+                            <input type="password" class="form-control" placeholder="Masukkan Password Baru .." name="password" required="required" min="5">
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary" value="Simpan">
+                        </div>
+                        <input type="hidden" name="konfirmasi" id="konfirmasi" value="0">
+                    </form>
 
                 </div>
 
             </div>
         </div>
-
     </div>
 </div>
 
@@ -75,3 +76,16 @@
 <br>
 
 <?php include 'footer.php'; ?>
+
+<script type="text/javascript">
+    function confirmGantiPassword() {
+        var konfirmasi = confirm("Apakah anda yakin ingin mengganti password?");
+        if (konfirmasi) {
+            document.getElementById('konfirmasi').value = "1";
+            return true;
+        } else {
+            document.getElementById('konfirmasi').value = "0";
+            return false;
+        }
+    }
+</script>

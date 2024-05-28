@@ -81,6 +81,12 @@
                         </div>
 
                         <div class="form-group">
+                        <input type="hidden" name="MAX_FILE_SIZE" value="10000000000"> <!-- 10GB dalam byte -->
+
+                            
+                        </div>
+
+                        <div class="form-group">
                             <label></label>
                             <input type="submit" class="btn btn-primary" value="Upload">
                         </div>

@@ -44,10 +44,11 @@
 <body>
     <div class="left-sidebar-pro">
         <nav id="sidebar" class="">
-            <div class="sidebar-header">
-                <a href="index.html"><img class="main-logo" src="../assets/img/logo/logo.png" alt="" /></a>
-                <strong><a href="index.html"><img src="../assets/img/logo/logosn.png" alt="" /></a></strong>
-            </div>
+        <div class="sidebar-header">
+    <a href="https://id.wikipedia.org/wiki/Arsip" target="_blank"><img class="main-logo" src="../assets/img/logo/logo.png" alt="" /></a>
+    <strong><a href="https://id.wikipedia.org/wiki/Arsip" target="_blank"><img src="../assets/img/logo/logosn.png" alt="" /></a></strong>
+</div>
+
             <div class="left-custom-menu-adp-wrap comment-scrollbar">
 
                 <nav class="sidebar-nav left-sidebar-menu-pro" style="margin-top: 30px">
@@ -106,8 +107,6 @@
                                     <div class="col-lg-6 col-md-7 col-sm-6 col-xs-12">
                                         <div class="header-top-menu tabl-d-n">
                                             <ul class="nav navbar-nav mai-top-nav">
-                                                <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
-                                                <li class="nav-item"><a href="arsip.php" class="nav-link">Semua Arsip</a></li>
                                             
                                             </li>
                                         </ul>
