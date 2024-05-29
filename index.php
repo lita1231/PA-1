@@ -43,9 +43,6 @@
             color: white; /* Warna teks tombol */
             text-decoration: none; /* Hapus garis bawah */
         }
-        .banner a:last-child {
-            margin-right: 20px; /* Hapus margin kanan untuk elemen terakhir */
-        }
         .banner a:hover {
             background: white; /* Warna latar belakang saat dihover */
             color: #006df0; /* Warna teks saat dihover */
@@ -71,7 +68,6 @@
         </div>
     </nav>
 
-
     <div class="banner">
         <div class="container">
             <div class="row">
@@ -83,20 +79,15 @@
                         <br>
                         <br>
 
-                        <a href="user_login.php">LOGIN USER</a>
-                        <a href="login.php">LOGIN ADMIN / DOSEN</a>
+                        <a href="login.php">LOGIN</a>
                     </div>
                 </div>
                 <div class="col-lg-6">
-
-                    <img src="gambar/depan/11.png">
-                    
+                    <img src="gambar/depan/11.png" alt="Banner Image">
                 </div>
             </div>
-
         </div>
     </div>
-
 
     <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
