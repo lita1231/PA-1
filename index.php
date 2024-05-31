@@ -13,9 +13,11 @@
     <link rel="stylesheet" href="stylet.css"> <!-- Hubungkan file CSS eksternal di sini -->
     <style>
         /* Menambah gaya tambahan */
-        body {
+        body, html {
             font-family: 'Roboto', sans-serif; /* Menggunakan font Roboto */
             background-color: #f7f7f7; /* Warna latar belakang */
+            margin: 0; /* Menghilangkan margin default */
+            height: 100%; /* Tinggi penuh untuk body dan html */
         }
         .navbar-inverse .navbar-brand,
         .navbar-inverse .navbar-nav > li > a {
@@ -26,6 +28,10 @@
             color: white; /* Warna teks pada banner */
             padding: 110px 0; /* Padding atas dan bawah */
             text-align: center; /* Posisi teks menjadi tengah */
+            min-height: 100vh; /* Minimum tinggi banner untuk memenuhi layar */
+            display: flex; /* Menggunakan flexbox untuk align center */
+            justify-content: center; /* Posisi tengah horizontal */
+            align-items: center; /* Posisi tengah vertikal */
         }
         .banner h1 {
             font-size: 36px; /* Ukuran font judul */
@@ -42,6 +48,9 @@
             transition: all 0.5s; /* Transisi untuk efek hover */
             color: white; /* Warna teks tombol */
             text-decoration: none; /* Hapus garis bawah */
+        }
+        .banner a:last-child {
+            margin-right: 0; /* Hapus margin kanan untuk elemen terakhir */
         }
         .banner a:hover {
             background: white; /* Warna latar belakang saat dihover */
@@ -72,18 +81,19 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
-                    <div style="margin-top: 140px;">
+                    <div>
                         <h1>Sistem Informasi E-Arsip Digital</h1>
                         <p>Manajemen file arsip dengan mudah dan cepat.</p>
 
                         <br>
                         <br>
 
-                        <a href="login.php">LOGIN</a>
+                        <a href="user_login.php">LOGIN USER</a>
+                        <a href="login.php">LOGIN ADMIN / DOSEN</a>
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <img src="gambar/depan/11.png" alt="Banner Image">
+                    <img src="gambar/depan/11.png" alt="E-Arsip">
                 </div>
             </div>
         </div>
