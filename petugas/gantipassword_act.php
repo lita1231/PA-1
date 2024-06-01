@@ -5,46 +5,39 @@ session_start();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Ambil data dari form
     $id = $_SESSION['id'];
-    $current_password = $_POST['current_password'];
     $new_password = $_POST['password'];
     $confirm_password = $_POST['password_confirmation'];
 
     // Validasi input
-    if (empty($current_password) || empty($new_password) || empty($confirm_password)) {
-        header("location:gantipassword.php?alert=semuafield");
+    if (empty($new_password) || empty($confirm_password)) {
+        header("Location: gantipassword.php?alert=semuafield");
         exit();
     }
 
     if ($new_password !== $confirm_password) {
-        header("location:gantipassword.php?alert=passwordmismatch");
+        header("Location: gantipassword.php?alert=passwordmismatch");
         exit();
     }
 
-    // Ambil password lama dari database
-    $result = mysqli_query($koneksi, "SELECT petugas_password FROM petugas WHERE petugas_id='$id'");
-    if ($result && mysqli_num_rows($result) > 0) {
-        $row = mysqli_fetch_assoc($result);
-        $db_password = $row['petugas_password'];
+    // Hash password baru
+    $new_password_hashed = password_hash($new_password, PASSWORD_DEFAULT);
 
-        // Verifikasi password lama
-        if (!password_verify($current_password, $db_password)) {
-            header("location:gantipassword.php?alert=passwordlama");
-            exit();
-        }
+    // Update password di database
+    $update_query = "UPDATE petugas SET petugas_password=? WHERE petugas_id=?";
+    $stmt = $koneksi->prepare($update_query);
+    $stmt->bind_param("si", $new_password_hashed, $id);
 
-        // Hash password baru
-        $new_password_hashed = password_hash($new_password, PASSWORD_DEFAULT);
-
-        // Update password di database
-        mysqli_query($koneksi, "UPDATE petugas SET petugas_password='$new_password_hashed' WHERE petugas_id='$id'") or die(mysqli_error($koneksi));
-        header("location:gantipassword.php?alert=sukses");
-        exit();
+    if ($stmt->execute()) {
+        header("Location: gantipassword.php?alert=sukses");
     } else {
-        header("location:gantipassword.php?alert=usernotfound");
-        exit();
+        header("Location: gantipassword.php?alert=gagalupdate");
     }
+
+    $stmt->close();
+    $koneksi->close();
+    exit();
 } else {
-    header("location:gantipassword.php");
+    header("Location: gantipassword.php");
     exit();
 }
 ?>

@@ -51,10 +51,7 @@
                     ?>
                     <!-- Change Password Form -->
                     <form id="gantipasswordForm" action="gantipassword_act.php" method="post" onsubmit="return confirmGantiPassword()">
-                        <div class="form-group">
-                            <label for="currentPassword">Password Lama</label>
-                            <input name="current_password" type="password" class="form-control" id="currentPassword" required>
-                        </div>
+                        
                         <div class="form-group">
                             <label for="newPassword">Password Baru</label>
                             <input name="password" type="password" class="form-control" id="newPassword" required>

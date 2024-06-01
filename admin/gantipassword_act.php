@@ -3,48 +3,43 @@ include '../koneksi.php';
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Validasi keberadaan session
+    if (!isset($_SESSION['id'])) {
+        header("Location: gantipassword.php?alert=sessionnotfound");
+        exit();
+    }
+
     // Ambil data dari form
     $id = $_SESSION['id'];
-    $current_password = $_POST['current_password'];
     $new_password = $_POST['password'];
     $confirm_password = $_POST['password_confirmation'];
 
     // Validasi input
-    if (empty($current_password) || empty($new_password) || empty($confirm_password)) {
-        header("location:gantipassword.php?alert=semuafield");
+    if (empty($new_password) || empty($confirm_password)) {
+        header("Location: gantipassword.php?alert=semuafield");
         exit();
     }
 
     if ($new_password !== $confirm_password) {
-        header("location:gantipassword.php?alert=passwordmismatch");
+        header("Location: gantipassword.php?alert=passwordmismatch");
         exit();
     }
 
-    // Ambil password lama dari database
-    $result = mysqli_query($koneksi, "SELECT admin_password FROM admin WHERE admin_id='$id'");
-    if ($result && mysqli_num_rows($result) > 0) {
-        $row = mysqli_fetch_assoc($result);
-        $db_password = $row['admin_password'];
+    // Hash password baru
+    $new_password_hashed = password_hash($new_password, PASSWORD_DEFAULT);
 
-        // Verifikasi password lama
-        if (!password_verify($current_password, $db_password)) {
-            header("location:gantipassword.php?alert=passwordlama");
-            exit();
-        }
-
-        // Hash password baru
-        $new_password_hashed = password_hash($new_password, PASSWORD_DEFAULT);
-
-        // Update password di database
-        mysqli_query($koneksi, "UPDATE admin SET admin_password='$new_password_hashed' WHERE admin_id='$id'") or die(mysqli_error($koneksi));
-        header("location:gantipassword.php?alert=sukses");
+    // Prepared statement untuk update password
+    $stmt = $koneksi->prepare("UPDATE admin SET admin_password=? WHERE admin_id=?");
+    $stmt->bind_param("si", $new_password_hashed, $id);
+    if ($stmt->execute()) {
+        header("Location: gantipassword.php?alert=sukses");
         exit();
     } else {
-        header("location:gantipassword.php?alert=usernotfound");
+        header("Location: gantipassword.php?alert=updatefailed");
         exit();
     }
 } else {
-    header("location:gantipassword.php");
+    header("Location: gantipassword.php");
     exit();
 }
 ?>
