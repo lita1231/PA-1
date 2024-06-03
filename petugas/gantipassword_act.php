@@ -5,17 +5,32 @@ session_start();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Ambil data dari form
     $id = $_SESSION['id'];
+    $old_password = $_POST['old_password'];
     $new_password = $_POST['password'];
     $confirm_password = $_POST['password_confirmation'];
 
     // Validasi input
-    if (empty($new_password) || empty($confirm_password)) {
+    if (empty($old_password) || empty($new_password) || empty($confirm_password)) {
         header("Location: gantipassword.php?alert=semuafield");
         exit();
     }
 
     if ($new_password !== $confirm_password) {
         header("Location: gantipassword.php?alert=passwordmismatch");
+        exit();
+    }
+
+    // Periksa password lama
+    $query = "SELECT petugas_password FROM petugas WHERE petugas_id=?";
+    $stmt = $koneksi->prepare($query);
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+    $stmt->bind_result($hashed_password);
+    $stmt->fetch();
+    $stmt->close();
+
+    if (!password_verify($old_password, $hashed_password)) {
+        header("Location: gantipassword.php?alert=passwordlama");
         exit();
     }
 

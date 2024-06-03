@@ -5,11 +5,12 @@ session_start();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Ambil data dari form
     $id = $_SESSION['id'];
+    $current_password = $_POST['current_password'];
     $new_password = $_POST['password'];
     $confirm_password = $_POST['password_confirmation'];
 
     // Validasi input
-    if (empty($new_password) || empty($confirm_password)) {
+    if (empty($current_password) || empty($new_password) || empty($confirm_password)) {
         header("location:gantipassword.php?alert=semuafield");
         exit();
     }
@@ -23,29 +24,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $result = mysqli_query($koneksi, "SELECT * FROM user WHERE user_id='$id'");
 
     if ($result && mysqli_num_rows($result) > 0) {
-        // Hash password baru
-        $new_password_hashed = password_hash($new_password, PASSWORD_DEFAULT);
+        $user = mysqli_fetch_assoc($result);
+        
+        // Verifikasi password lama
+        if (password_verify($current_password, $user['user_password'])) {
+            // Hash password baru
+            $new_password_hashed = password_hash($new_password, PASSWORD_DEFAULT);
 
-        // Update password di database
-        $update_result = mysqli_query($koneksi, "UPDATE user SET user_password='$new_password_hashed' WHERE user_id='$id'");
+            // Update password di database
+            $update_result = mysqli_query($koneksi, "UPDATE user SET user_password='$new_password_hashed' WHERE user_id='$id'");
 
-        if ($update_result) {
-            header("location:gantipassword.php?alert=sukses");
-            exit();
+            if ($update_result) {
+                header("location:gantipassword.php?alert=sukses");
+                exit();
+            } else {
+                header("location:gantipassword.php?alert=updateerror");
+                exit();
+            }
         } else {
-            header("location:gantipassword.php?alert=updateerror");
+            header("location:gantipassword.php?alert=passwordlama");
             exit();
         }
     } else {
-        // Debugging: Tampilkan pesan error jika pengguna tidak ditemukan
-        if (!$result) {
-            // Query failed
-            $error_message = mysqli_error($koneksi);
-            echo "Error: " . $error_message;
-        } elseif (mysqli_num_rows($result) == 0) {
-            // No rows found
-            echo "Error: User not found. ID: " . $id;
-        }
         header("location:gantipassword.php?alert=usernotfound");
         exit();
     }
